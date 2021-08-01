@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -20,7 +21,9 @@ public class Business {
     @ManyToOne(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @ElementCollection(targetClass=Address.class)
     private Address address;
-    private ArrayList<User> owners;
+    @OneToMany(cascade= CascadeType.ALL)
+    @ElementCollection(targetClass=User.class)
+    private Collection<User> owners = new ArrayList<>();
     private String phoneNumber;
 
 }

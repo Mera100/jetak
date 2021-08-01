@@ -9,7 +9,11 @@ public interface BusinessService {
 
     Business getBusiness(String name);
 
-    Business addOwner(String username);
+    Business addOwner(String businessName, String ownerName);
 
     List<Business> getBusinesses();
+
+    List<Business> getBusinessesByOwner(String name);
+
+
 }
