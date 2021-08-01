@@ -24,7 +24,7 @@ public class Order {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @ElementCollection(targetClass = User.class)
-    private User costumer;
+    private User customer;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @ElementCollection(targetClass = Business.class)
