@@ -1,7 +1,7 @@
 package life.majd.jetak.jetak.service;
 
-import life.majd.jetak.jetak.model.User;
-import life.majd.jetak.jetak.model.Role;
+import life.majd.jetak.jetak.domain.User;
+import life.majd.jetak.jetak.domain.Role;
 
 import java.util.List;
 

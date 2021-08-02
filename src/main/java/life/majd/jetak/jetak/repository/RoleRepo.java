@@ -1,6 +1,6 @@
 package life.majd.jetak.jetak.repository;
 
-import life.majd.jetak.jetak.model.Role;
+import life.majd.jetak.jetak.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

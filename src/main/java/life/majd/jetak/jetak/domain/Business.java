@@ -1,4 +1,4 @@
-package life.majd.jetak.jetak.model;
+package life.majd.jetak.jetak.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,8 @@ import java.util.Collection;
 
 import static javax.persistence.GenerationType.AUTO;
 
-@Entity @AllArgsConstructor @Data
+@Entity @AllArgsConstructor
+@Data // Creates Getters,Setters,toString, RequiredArgsConstructor
 @NoArgsConstructor
 public class Business {
 
@@ -24,6 +25,7 @@ public class Business {
 
     @ManyToMany
     private Collection<User> owners = new ArrayList<>();
+
     private String phoneNumber;
 
 }

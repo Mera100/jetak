@@ -1,4 +1,4 @@
-package life.majd.jetak.jetak.model;
+package life.majd.jetak.jetak.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,8 @@ import static javax.persistence.GenerationType.AUTO;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity @Data
+@Entity
+@Data // Creates Getters,Setters,toString, RequiredArgsConstructor
 public class Address {
     @Id @GeneratedValue(strategy = AUTO)
     private Long id;
