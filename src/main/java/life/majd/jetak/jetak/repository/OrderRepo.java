@@ -1,6 +1,6 @@
 package life.majd.jetak.jetak.repository;
 
-import life.majd.jetak.jetak.model.Order;
+import life.majd.jetak.jetak.domain.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

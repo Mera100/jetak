@@ -1,7 +1,7 @@
 package life.majd.jetak.jetak.repository;
 
-import life.majd.jetak.jetak.model.Business;
-import life.majd.jetak.jetak.model.User;
+import life.majd.jetak.jetak.domain.Business;
+import life.majd.jetak.jetak.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
