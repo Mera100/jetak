@@ -4,8 +4,8 @@ import life.majd.jetak.jetak.model.Business;
 import life.majd.jetak.jetak.model.User;
 import life.majd.jetak.jetak.repository.BusinessRepo;
 import life.majd.jetak.jetak.repository.UserRepo;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,17 +13,13 @@ import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 @Slf4j
 public class BusinessServiceImpl implements BusinessService {
 
     private final BusinessRepo businessRepo;
     private final UserRepo userRepo;
 
-    @Autowired
-    public BusinessServiceImpl(BusinessRepo businessRepo, UserRepo userRepo) {
-        this.businessRepo = businessRepo;
-        this.userRepo = userRepo;
-    }
 
     @Override
     public Business saveBusiness(Business business) {

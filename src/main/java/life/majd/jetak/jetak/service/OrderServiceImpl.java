@@ -5,7 +5,6 @@ import life.majd.jetak.jetak.model.Order;
 import life.majd.jetak.jetak.repository.OrderRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +15,7 @@ import java.util.List;
 @Transactional
 @Slf4j
 public class OrderServiceImpl implements OrderService {
-    @Autowired
+
     private final OrderRepo orderRepo;
 
 
