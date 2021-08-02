@@ -19,7 +19,7 @@ public class User {
     private String lastName;
     private String username;
     private String password;
-
+    private String email;
     @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     @ElementCollection(targetClass=Address.class)
     private Address address;
