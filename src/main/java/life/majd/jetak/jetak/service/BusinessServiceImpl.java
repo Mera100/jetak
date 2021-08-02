@@ -1,7 +1,8 @@
 package life.majd.jetak.jetak.service;
 
-import life.majd.jetak.jetak.model.Business;
-import life.majd.jetak.jetak.model.User;
+import life.majd.jetak.jetak.domain.Business;
+import life.majd.jetak.jetak.domain.Product;
+import life.majd.jetak.jetak.domain.User;
 import life.majd.jetak.jetak.repository.BusinessRepo;
 import life.majd.jetak.jetak.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
@@ -49,5 +50,25 @@ public class BusinessServiceImpl implements BusinessService {
     public List<Business> getBusinessesByOwner(String ownerName) {
         User user = userRepo.findByUsername(ownerName);
         return businessRepo.findByOwner(user);
+    }
+
+    @Override
+    public Product saveProduct(Product product, Business business) {
+        return null;
+    }
+
+    @Override
+    public List<Product> saveProducts(List<Product> products, Business business) {
+        return null;
+    }
+
+    @Override
+    public Product deleteProduct(String productName) {
+        return null;
+    }
+
+    @Override
+    public Product editProduct(Product product) {
+        return null;
     }
 }
