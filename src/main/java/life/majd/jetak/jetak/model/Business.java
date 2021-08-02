@@ -21,8 +21,8 @@ public class Business {
     @ManyToOne(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @ElementCollection(targetClass=Address.class)
     private Address address;
-    @OneToMany(cascade= CascadeType.ALL)
-    @ElementCollection(targetClass=User.class)
+
+    @ManyToMany
     private Collection<User> owners = new ArrayList<>();
     private String phoneNumber;
 

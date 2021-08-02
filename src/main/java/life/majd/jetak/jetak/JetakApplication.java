@@ -2,6 +2,7 @@ package life.majd.jetak.jetak;
 
 import life.majd.jetak.jetak.model.Address;
 import life.majd.jetak.jetak.model.Business;
+import life.majd.jetak.jetak.model.Role;
 import life.majd.jetak.jetak.model.User;
 import life.majd.jetak.jetak.service.BusinessService;
 import life.majd.jetak.jetak.service.OrderService;
@@ -16,19 +17,26 @@ import java.util.ArrayList;
 @SpringBootApplication
 public class JetakApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JetakApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(JetakApplication.class, args);
+    }
 
-	@Bean
-	CommandLineRunner run(UserService userService, OrderService orderService, BusinessService businessService) {
-		return args -> {
+    @Bean
+    CommandLineRunner run(UserService userService, OrderService orderService, BusinessService businessService) {
+        return args -> {
+            userService.saveRole(new Role(null, "ROLE_ADMIN"));
+            userService.saveRole(new Role(null, "ROLE_OWNER"));
+            userService.saveUser(new User(null, "Majd", "Hasan", "majdhasan", "1234","majd.hasan@majd.com", new Address(null, "Mashhad Str", "Mashhad", "Hamerkaz", "16967", "Israel"), new ArrayList<>()));
+            userService.saveUser(new User(null, "Mido", "Zoabi", "midoz82", "1234","mido@mido.com", new Address(null, "Mashhad Str", "Mashhad", "Hamerkaz", "16967", "Israel"), new ArrayList<>()));
+            businessService.saveBusiness(new Business(null, "Zaatar", new Address(null, "Mashhad Str", "Mashhad", "Hamerkaz", "16967", "Israel"), new ArrayList<>(), "0123456879"));
+            businessService.saveBusiness(new Business(null, "Meshhdawi", new Address(null, "Mashhad Str", "Mashhad", "Hamerkaz", "16967", "Israel"), new ArrayList<>(), "0123456879"));
+            businessService.addOwner("Zaatar", "midoz82");
+            businessService.addOwner("Zaatar", "majdhasan");
+            businessService.addOwner("Meshhdawi", "majdhasan");
 
-			userService.saveUser(new User(null,"Majd","Hasan","majdhasan","1234",new Address(null, "Mashhad Str", "Mashhad", "Hamerkaz", "16967", "Israel"),new ArrayList<>()));
-			User mido = userService.saveUser(new User(null, "Mido", "Zoabi", "midoz82", "1234", new Address(null, "Mashhad Str", "Mashhad", "Hamerkaz", "16967", "Israel"), new ArrayList<>()));
-			ArrayList<User> zaatarOwners = new ArrayList<>();
-			businessService.saveBusiness(new Business(null,"Zaatar",new Address(null, "Mashhad Str", "Mashhad", "Hamerkaz", "16967", "Israel"),zaatarOwners,"0123456879"));
-		};
-	}
+            userService.addRoleToUser("majdhasan","ROLE_ADMIN");
+
+        };
+    }
 
 }
