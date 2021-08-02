@@ -1,8 +1,8 @@
 package life.majd.jetak.jetak.controller;
 
-import life.majd.jetak.jetak.model.Business;
-import life.majd.jetak.jetak.model.Order;
-import life.majd.jetak.jetak.model.User;
+import life.majd.jetak.jetak.domain.Business;
+import life.majd.jetak.jetak.domain.Order;
+import life.majd.jetak.jetak.domain.User;
 import life.majd.jetak.jetak.service.BusinessService;
 import life.majd.jetak.jetak.service.OrderService;
 import life.majd.jetak.jetak.service.UserService;

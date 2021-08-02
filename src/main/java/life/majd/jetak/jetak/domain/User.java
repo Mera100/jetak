@@ -1,4 +1,4 @@
-package life.majd.jetak.jetak.model;
+package life.majd.jetak.jetak.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,8 +10,9 @@ import java.util.Collection;
 
 import static javax.persistence.GenerationType.AUTO;
 
-@Entity
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data // Creates Getters,Setters,toString, RequiredArgsConstructor
+@Entity // Tells JPA that this POJO should be persisted in a DB.
+@AllArgsConstructor @NoArgsConstructor
 public class User {
     @Id @GeneratedValue(strategy = AUTO)
     private Long id;
@@ -25,4 +26,5 @@ public class User {
     private Address address;
     @ManyToMany
     private Collection<Role> roles = new ArrayList<>();
+    private boolean isActive;
 }

@@ -1,4 +1,4 @@
-package life.majd.jetak.jetak.model;
+package life.majd.jetak.jetak.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,16 +8,16 @@ import javax.persistence.*;
 
 import static javax.persistence.GenerationType.AUTO;
 
-@Data
-@Entity
+@Data // Creates Getters,Setters,toString, RequiredArgsConstructor
+@Entity // Tells JPA that this POJO should be persisted in a DB.
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
     @Id @GeneratedValue(strategy = AUTO)
     private Long id;
     private String name;
+    private String description;
     private double price;
-    @ManyToOne(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
-    @ElementCollection(targetClass=Business.class)
-    private Business business;
+    @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    private Business seller;
 }

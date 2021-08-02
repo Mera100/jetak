@@ -1,7 +1,7 @@
 package life.majd.jetak.jetak.service;
 
 import life.majd.jetak.jetak.helpers.OrderStatus;
-import life.majd.jetak.jetak.model.Order;
+import life.majd.jetak.jetak.domain.Order;
 import life.majd.jetak.jetak.repository.OrderRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
